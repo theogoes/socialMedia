@@ -3,7 +3,7 @@ const { route } = require("express/lib/application")
 const loginController = require("../controllers/loginController")
 const postController = require("../controllers/postController")
 const profileController = require("../controllers/profileController")
-const userController = require("../controllers/userController")
+const userController = require("../controllers/UserController")
 
 const router = Router()
 
