@@ -20,7 +20,12 @@ const Schema = new mongoose.Schema({
     likes:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Post"
-    }]
+    }],
+    avatar:{
+        type : String,
+        required : true
+    }
+    
 })
 
 module.exports = mongoose.model("User",Schema)

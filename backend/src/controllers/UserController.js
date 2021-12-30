@@ -7,6 +7,7 @@ module.exports = {
             email,
             userName,
             password,
+            avatar
         } = req.body
 
          try{
@@ -15,7 +16,8 @@ module.exports = {
             const createdUser = await User.create({
                 email,
                 userName,
-                password
+                password,
+                avatar
             })
             return res.status(200).send({
                 message: "crai criado cupix",
