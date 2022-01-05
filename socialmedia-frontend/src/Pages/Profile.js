@@ -1,10 +1,12 @@
 import React from 'react'
+import HeaderNav from '../Components/HeaderNav'
 
 function Profile() {
     return (
-        <div>
+        <>
+            <HeaderNav/>
             <h1>Profille</h1>
-        </div>
+        </>
     )
 }
 

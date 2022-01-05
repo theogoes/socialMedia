@@ -1,10 +1,12 @@
 import React from 'react'
+import RegisterMainSection from '../Components/RegisterMainSection'
+
 
 function Register() {
     return (
-        <div>
-            <h1>Register</h1>
-        </div>
+        <>
+            <RegisterMainSection/>
+        </>
     )
 }
 

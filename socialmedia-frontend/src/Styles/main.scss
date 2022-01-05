@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+$breakepoint : 680px;
+
 *{
     margin: 0;
     padding: 0;
@@ -9,5 +11,245 @@
 
 body, button, input, textarea {
     font-family: 'Nunito';
-    font-size: 2vh;
+    font-size: 14px;
 }
+
+#root{
+   min-height:  100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #f7f5f2
+}
+.link {
+    text-decoration: none;
+    color: rgb(122, 88, 88);
+    font-weight: bold; 
+
+    &:hover{
+        color: rgb(182, 147, 147);
+    }
+
+    transition: 0.3s;
+}
+
+button{
+    border: none;
+    height: 2em;
+    background-color: rgb(219, 163, 163);
+    font-size: 1.5em;
+    color: rgb(80, 23, 23);
+    font-weight: bold;
+    border-radius: 5px;
+    &:hover{
+        background-color: rgb(231, 195, 195);
+    }
+    transition: 0.3s;
+}
+
+.divLogo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+        .link{
+            color: brown;
+        }
+
+        h1{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+
+            p#P{
+                font-family: 'Nunito';
+                font-style: italic;
+                font-size: 4vh;
+                padding-right: 0.2em;
+            }
+            p#F{
+                font-family: 'Nunito';
+                font-size: 4vh;
+        }
+    }
+}
+
+
+
+header{
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px;
+    border-color: #ccc;
+    
+    nav{
+        height: 100%;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p#sair{
+            font-style: oblique;
+            font-family: 'Nunito';
+        }
+    }
+}
+
+main{
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .form-login-register{
+        max-width: 1000px;
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        .logo{
+            color: brown;
+            align-self: center;
+            height: 400px;
+            width: 350px;
+
+            @media(max-width: $breakepoint){
+                height: 200px;
+                width: 150px;
+            }
+            
+
+        }
+        form{
+            color: brown;
+            width: 70%;
+            height: 100%;
+            max-height: 300px;
+            align-self: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            fieldset{
+                width: 100%;
+                align-self: center;
+                padding-top: 1em;
+                border: none;
+
+                
+                .input-field{
+                    margin-top: 1em;
+                    width: 100%;
+                    height: 3em;
+                    background-color: rgb(245, 225, 225);
+                    border-radius: 5px;
+                    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                            
+                    input{
+                        width: 95%;
+                        height: 100%;
+                        align-self: center;
+
+                        background-color: rgb(245, 225, 225);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        
+                        border:none;
+                    }
+                   
+                }
+
+                button{
+                    width: 100%;
+                    margin-top: 1em;
+                }
+                .registre-se{
+                    width: 63%;
+                    margin-top: 1em;
+
+                    display: flex;
+
+                    align-content: center;
+                    justify-content: space-between;
+                    
+                }
+               
+            }
+            
+            
+        }
+        @media(max-width: $breakepoint) {
+            grid-template-columns: 1fr;
+            align-self: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+     }
+    }
+    @media(max-width : $breakepoint) {
+        height: 94vh;
+    }
+   
+}
+
+footer{
+    width: 100%;
+    height: 5vh;
+
+    display: none;
+    align-content: center;
+    justify-content: center;
+
+    border-top: solid 1px;
+    border-color: #ccc;
+
+    
+    
+    nav{
+
+        width: 50%;
+        height: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .BottomIcon{
+            width: 25px;
+            height: 25px;
+
+            color: brown;
+
+            &:hover{
+                color: rgb(231, 195, 195);
+            }
+
+            transition: 0.3s;
+        }
+    }
+}
+
+@media screen and (max-width : 600px) {
+    footer{
+        display: flex;
+    }
+}
+

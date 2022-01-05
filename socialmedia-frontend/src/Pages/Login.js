@@ -1,10 +1,11 @@
 import React from 'react'
+import LoginMainSection from '../Components/LoginMainSection'
 
 function Login() {
     return (
-        <div>
-            <h1>Login</h1>
-        </div>
+        <>
+            <LoginMainSection/>
+        </>
     )
 }
 
