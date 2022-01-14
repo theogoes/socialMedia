@@ -46,7 +46,6 @@ button{
     }
     transition: 0.3s;
 }
-
 .divLogo{
     width: 100%;
     display: flex;
@@ -75,6 +74,25 @@ button{
     }
 }
 
+.divLoader{
+    animation: is-loading 1s infinite;
+    height: 40px;
+    width: 40px;
+    border: 6px solid rgb(231, 195, 195);
+    border-top: 6px solid brown;
+    border-radius: 50%;
+
+    display: flex;
+    align-self: center;
+
+    margin-top: 10vh;
+}
+
+@keyframes is-loading{
+    to{
+        transform: rotate(1turn);
+    }
+}
 
 
 header{
@@ -86,6 +104,9 @@ header{
     align-items: center;
     border-bottom: solid 1px;
     border-color: #ccc;
+
+    position: fixed;
+    background-color: #f7f5f2;
     
     nav{
         height: 100%;
@@ -221,6 +242,10 @@ footer{
     border-top: solid 1px;
     border-color: #ccc;
 
+    position: fixed;
+    bottom: 0;
+    background-color: #f7f5f2;
+
     
     
     nav{
@@ -253,3 +278,76 @@ footer{
     }
 }
 
+.card-container{
+    width: 80%;
+    max-width: 1000px;
+    background-color: white;
+
+    border: solid 1px #ccc ;
+    border-radius: 10px;
+
+    margin: 2em;
+    margin-top: 4em;
+
+    .card-header{
+        width: 95%;
+        display: flex;
+        padding: 1.5em;
+        max-height: 1.5em;
+
+        align-items: center;
+        img{
+            max-height: 3em;
+            border-radius: 2em;
+            margin-right: 1em;
+        }
+        h3{
+            font-size: 1em;
+        }
+    }
+    .card-picture{
+        max-height: 1000%;
+        width: 100%;
+
+        overflow: hidden;
+
+        img{
+            object-fit: cover;
+            max-width: 100%
+        }
+    }
+    .card-footer{
+        padding: 1em;
+
+        .card-metadata{
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5em;
+
+            #like{
+                width: 1.7em;
+                height: 1.7em;
+                margin-right: 0.5em;
+            }
+
+            h3{
+                font-size: 1em;
+            }
+        }
+
+        .card-info{
+            p{
+                font-size: 1em;
+            }
+            
+            a{
+                font-size: 1em;
+                text-decoration: none;
+                font-weight: bold;
+                color: #333;
+                margin-right: 0.5em;
+            }
+        }
+        margin-bottom: 0.5em;
+    }
+}
