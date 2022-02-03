@@ -7,6 +7,12 @@ import LoaderStandart from './standarts/LoaderStandart'
 function FeedContainer() {
 
     const [loadPost, setLoadPost] = useState([])
+    const [inter, setInter] = useState(false)
+
+    function interactionPost(){
+        setInter(!inter)
+    }
+
 
     useEffect(() => {
         console.log("Bom dia :D")
@@ -21,7 +27,7 @@ function FeedContainer() {
             }
         }
         getPosts()
-    }, [])
+    }, [inter])
 
     return (
         <>
@@ -32,7 +38,11 @@ function FeedContainer() {
                     usr ={post.user.userName} 
                     desc = {post.description}
                     likes = {post.likes}
-                    avatar ={post.user.avatar}/>
+                    avatar = {post.user.avatar}
+                    id = {post._id}
+                    inter = {interactionPost}
+                    userId = {post.user._id}
+                    />
                 ))
             }
         </>

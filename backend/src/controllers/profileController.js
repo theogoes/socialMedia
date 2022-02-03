@@ -7,7 +7,7 @@ module.exports = {
         const {user_id} = req.params
 
         try {
-            userInfo = await User.findById(user_id)
+            userInfo = await User.findById(user_id).populate("likes")
             if(!userInfo) return res.status(400).send({message : "cupinxa n existe -.-"})
             postUser = await post.find({
                 user: user_id

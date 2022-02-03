@@ -2,10 +2,10 @@ import React from 'react'
 import RegisterMainSection from '../Components/RegisterMainSection'
 
 
-function Register() {
+function Register({updateUserID}) {
     return (
         <>
-            <RegisterMainSection/>
+            <RegisterMainSection updateUserID = {updateUserID}/>
         </>
     )
 }

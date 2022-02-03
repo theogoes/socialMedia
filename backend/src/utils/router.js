@@ -15,8 +15,6 @@ router.post("/users",userController.createUser)
 router.get("/users", userController.listUser)
 //fazer login
 router.post("/login", loginController.login )
-//fazer logout
-//ver o feed
 //da like
 router.put("/post/:post_id/like", profileController.likePost)
 //postar foto

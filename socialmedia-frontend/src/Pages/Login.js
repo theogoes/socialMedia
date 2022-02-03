@@ -1,10 +1,10 @@
 import React from 'react'
 import LoginMainSection from '../Components/LoginMainSection'
 
-function Login() {
+function Login({updateUserID}) {
     return (
         <>
-            <LoginMainSection/>
+            <LoginMainSection updateUserID = {updateUserID}/>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LoaderStandart({page}) {
+function LoaderStandart() {
     return (
         <><div className='divLoader' /></>
         

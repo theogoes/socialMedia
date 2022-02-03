@@ -16,6 +16,7 @@ mogoose.connect(uri, {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
+    console.log('conectado na porta 3000')
   })
   .catch(err => {
     console.error("Error connecting to mongo", err);

@@ -4,10 +4,10 @@ import HeaderNav from '../Components/HeaderNav'
 import BottomNav from '../Components/BottomNav'
 
 
-function Fedd() {
+function Fedd({clearUserID}) {
     return (
         <>
-            <HeaderNav/>
+            <HeaderNav clearUserID={clearUserID}/>
             <FeedContainer/>
             <BottomNav/>
         </>

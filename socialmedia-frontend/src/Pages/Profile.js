@@ -1,11 +1,11 @@
 import React from 'react'
 import HeaderNav from '../Components/HeaderNav'
+import ProfileMainSection from '../Components/ProfileMainSection'
 
 function Profile() {
     return (
         <>
-            <HeaderNav/>
-            <h1>Profille</h1>
+            <ProfileMainSection/>
         </>
     )
 }

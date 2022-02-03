@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import {GiPartyPopper} from 'react-icons/gi'
+import {useNavigate} from 'react-router-dom'
 import api from '../Services/api';
+import login from '../Utils/login';
 
 import InputStandart from './standarts/InputStandart';
 import LoaderStandart from './standarts/LoaderStandart';
 import NomeSiteStandart from './standarts/NomeSiteStandart';
 
-function RegisterMainSection() {
+function RegisterMainSection({updateUserID}) {
     const [email, setEmail] = useState("")
     const [email2, setEmail2] = useState("")
     const [userName, setUsername] = useState("")
@@ -14,19 +16,24 @@ function RegisterMainSection() {
     const [password2, setPassword2] = useState("")
     const [loading, setLoading] = useState(false)
 
+    const n = useNavigate()
+
     async function register(e){
         e.preventDefault()
 
         try {
             setLoading(true)
-            await api.post('users',{
+            const resp = await api.post('users',{
                 email : email,
                 userName: userName,
                 password: password,
                 avatar : "avatar"
             })
+            const {data} = resp
+            login(resp)
+            updateUserID(data.data._id)
+            n("/")
             setLoading(false)
-            alert("Usuarioa cadastrado com sucesso")
         } catch (error) {
             setLoading(false)
             console.log("nanana"+error)
