@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ProfileFeedCard from './ProfileFeedCard';
 
-function ProfileFeed({posts}) {
+function ProfileFeed({posts, likes, follow}) {
 
     const [opt, setOpt] = useState(0);
 
@@ -54,10 +54,14 @@ function ProfileFeed({posts}) {
                   
             </div>:null}
             {opt === 1?<div className='profile_post'>
-                <h3>Teste 2 </h3>
-                <h3>Teste 2 </h3>
-                <h3>Teste 2 </h3>
-                <h3>Teste 2 </h3>
+            {likes === null? null :
+                likes.map(post =>(
+                    <ProfileFeedCard key={post._id}
+                    picture = {post.picture}
+                    follow = {follow}
+                    /> 
+                ))   
+                }
             </div>:null}
             {opt === 2?<div className='profile_post'>
                 <h3>Teste 3 </h3>

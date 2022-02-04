@@ -15,7 +15,6 @@ function FeedCard({picture, usr, desc, likes, avatar, id, inter, userId}) {
                 }
             })
             inter()
-            console.log(userId)
         } catch (error) {
             console.log("acho que não mazinho: "+error)
             

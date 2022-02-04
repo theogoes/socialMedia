@@ -8,13 +8,19 @@ import ProfileHeader from './profile/ProfileHeader'
 
 function ProfileMainSection() {
     const {id} = useParams()
+    
     const [Username,setUserName] = useState("")
     const [email,setEmail] = useState("")
     const [followers,setFollowers] = useState("")
     const [avatar,setAvatar] = useState("")
+    const [userFollow, setFollow] = useState(false)
 
     const [userPosts, setPosts] = useState([])
     const [useLikes, setUserLikes] = useState([])
+
+    async function isFollow(){
+        setFollow(!userFollow)
+    }
 
     useEffect(()=>{
         async function getProfile(){
@@ -23,16 +29,16 @@ function ProfileMainSection() {
                 const {data} = resp
                 setUserName(data.userInfo.userName)
                 setEmail(data.userInfo.email)
-                setFollowers(data.userInfo.followers.length)
+                setFollowers(data.userInfo.followers)
                 setAvatar(data.userInfo.avatar)
                 setPosts(data.postUser)
-                console.log(data.userInfo.likes)
+                setUserLikes(data.userInfo.likes)
             } catch (error) {
                 alert("deu ruim padrim : " + error)
             }
         }
         getProfile()
-    },[])
+    },[userFollow])
     
     return (
         <>
@@ -44,9 +50,12 @@ function ProfileMainSection() {
                 userComent = {email}
                 followers = {followers}
                 avatar = {avatar}
+                follow = {isFollow}
+                perfilUserId = {id}
                 />
                 <ProfileFeed
-                posts={userPosts}
+                posts = {userPosts}
+                likes = {useLikes}
                 />
    
                    

@@ -375,16 +375,32 @@ footer{
         display: grid;
         grid-template-columns: 1fr 2fr;
         align-items: center;
-        img{
-            max-width: 10em;
-            max-height: 10em;
-            border-radius: 50%;
-            justify-self: center;
-        }
+
         .follow{
             display: flex;
             .seguindo{
                 padding-right: 1em;
+            }
+        }
+        .image_place{
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            margin-top: 4em;
+            img{
+                max-width: 10em;
+                max-height: 10em;
+                border-radius: 50%;
+            }
+            .h3border{
+                width: 30%;
+                margin-top: 1em;
+                border: rgb(165, 101, 101) solid 1px;
+                display: flex;
+                justify-content: center;
+                border-radius: 10px;
+                cursor: pointer;
             }
         }
     }
