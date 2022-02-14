@@ -29,7 +29,7 @@ module.exports = {
 
     async listPartys(req,res){
         try {
-            const allPartys = await Party.find()
+            const allPartys = await Party.find().populate("gerente")
             
             return res.status(200).send({
                 message: "to as festitas",

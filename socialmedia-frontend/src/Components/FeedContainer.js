@@ -21,7 +21,6 @@ function FeedContainer() {
                 const post = await api.get('party')
                 const {data} = post
                 setLoadPost(data.data)
-                console.log(data.data)
             } catch (error) {
                 alert("deu ruim padrim : " + error)
             }
@@ -33,7 +32,7 @@ function FeedContainer() {
         <>
             {loadPost === null ? <LoaderStandart/> :
                 loadPost.map(post =>(
-                    <FeedCard key={post._id} 
+                   /* <FeedCard key={post._id} 
                     picture={post.picture} 
                     usr ={post.user.userName} 
                     desc = {post.description}
@@ -42,7 +41,8 @@ function FeedContainer() {
                     id = {post._id}
                     inter = {interactionPost}
                     userId = {post.user._id}
-                    />
+                    />*/
+                    console.log(post.gerente)
                 ))
             }
         </>
