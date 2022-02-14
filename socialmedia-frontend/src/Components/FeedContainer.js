@@ -18,7 +18,7 @@ function FeedContainer() {
         console.log("Bom dia :D")
         async function getPosts(){
             try {
-                const post = await api.get('post')
+                const post = await api.get('party')
                 const {data} = post
                 setLoadPost(data.data)
                 console.log(data.data)

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import api from '../../Services/api';
+import UserIconStandart from '../standarts/UserIconStandart';
 
 function ProfileHeader({userName, userComent, followers, avatar, follow, perfilUserId }){
     
@@ -22,9 +23,9 @@ function ProfileHeader({userName, userComent, followers, avatar, follow, perfilU
     return (
     <div className='profile_header'>
         <div className='image_place'>
-            <img src={''+avatar+''} alt='prifile_icon'/>
+            <UserIconStandart avatar={avatar}/>
             {followers.includes(userID)?
-                <div className='h3border' onClick={gonaFollow}><h3>Seguindo</h3></div>
+                <div className='h3border' id='seguindo' onClick={gonaFollow}><h3>Seguindo</h3></div>
                 :
                 <div className='h3border' onClick={gonaFollow}><h3>Seguir</h3></div>
             }

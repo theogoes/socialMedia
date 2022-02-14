@@ -16,6 +16,11 @@ export default function BottomNav() {
                     <AiFillPlusCircle className='BottomIcon'/>
                 </Link>    
             </nav>
+            <a href='/post'>
+            <div className='butt'>
+            <button class="kc_fab_main_btn">+</button>
+            </div>
+            </a>
         </footer>
     )
 }

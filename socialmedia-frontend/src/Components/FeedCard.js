@@ -1,6 +1,7 @@
 import React, {useState}from 'react'
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai'
 import api from '../Services/api'
+import UserIconStandart from './standarts/UserIconStandart'
 
 
 function FeedCard({picture, usr, desc, likes, avatar, id, inter, userId}) {
@@ -25,7 +26,7 @@ function FeedCard({picture, usr, desc, likes, avatar, id, inter, userId}) {
         <>
             <div className='card-container'>
                 <div className='card-header'>
-                    <img src={avatar} alt='Profile-icon' />
+                    <UserIconStandart avatar={avatar}/>
                     <h3>{usr}</h3>
                 </div>
                 <div className='card-picture'>

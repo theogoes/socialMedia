@@ -32,6 +32,10 @@ body, button, input, textarea {
 
     transition: 0.3s;
 }
+a{
+    text-decoration: none;
+    color: #333;
+}
 
 button{
     border: none;
@@ -60,17 +64,6 @@ button{
             display: flex; 
             justify-content: center;
             align-items: center;
-
-            p#P{
-                font-family: 'Nunito';
-                font-style: italic;
-                font-size: 4vh;
-                padding-right: 0.2em;
-            }
-            p#F{
-                font-family: 'Nunito';
-                font-size: 4vh;
-        }
     }
 }
 
@@ -103,23 +96,18 @@ header{
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border-bottom: solid 1px;
-    border-color: #ccc;
 
     position: fixed;
-    background-color: #f7f5f2;
-    
+    margin-top: 2em;
     nav{
         height: 100%;
-        width: 80%;
+        width: 90%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        p#sair{
-            font-style: oblique;
-            font-family: 'Nunito';
+
+        #sair{
+            cursor: pointer;
         }
     }
 }
@@ -127,7 +115,7 @@ header{
 main{
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -237,27 +225,22 @@ main{
 
 footer{
     width: 100%;
-    height: 5vh;
+    height: 10vh;
 
-    display: none;
+    display: flex;
     align-content: center;
     justify-content: center;
 
-    border-top: solid 1px;
-    border-color: #ccc;
 
     position: fixed;
     bottom: 0;
-    background-color: #f7f5f2;
 
-    
-    
     nav{
 
         width: 50%;
         height: 100%;
         
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: space-between;
 
@@ -274,11 +257,40 @@ footer{
             transition: 0.3s;
         }
     }
+    .butt{
+        display: flex;
+        align-items: center;
+        justify-items: end;
+        
+
+        position:absolute;
+        right:13vh;
+
+        .kc_fab_main_btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 20%;
+            background-color: #f7f5f2;
+
+            cursor: pointer;
+
+            border: solid 1px rgb(231, 195, 195);;
+
+            font-size: 30px;
+      }
+    } 
 }
 
 @media screen and (max-width : 600px) {
     footer{
+        height: 5vh;
+        background-color:rgb(219, 163, 163);
+        nav{
         display: flex;
+        }
+        .butt{
+            display: none;
+        }
     }
 }
 
@@ -362,9 +374,10 @@ footer{
 .profile_container{
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: flex-start;
+    align-items: center;
 
-    margin-top: 6vh;
 
     .profile_header{
         background-color: whitesmoke;
@@ -393,6 +406,10 @@ footer{
                 max-height: 10em;
                 border-radius: 50%;
             }
+            #seguindo{
+                background-color:rgb(165, 101, 101);
+                color: #f7f5f2;  
+            }
             .h3border{
                 width: 30%;
                 margin-top: 1em;
@@ -402,6 +419,7 @@ footer{
                 border-radius: 10px;
                 cursor: pointer;
             }
+            
         }
     }
 
@@ -459,10 +477,6 @@ footer{
                 grid-template-columns: 1fr 1fr 1fr; 
                 grid-template-rows: 0.9fr 0.9fr 0.9fr; 
                 gap: 10px 10px;
-                grid-template-areas: 
-                  ". . ."
-                  ". . ."
-                  ". . ."; 
                 .profile_card{
                     width: 100%;
                     height: 90%;
@@ -472,8 +486,188 @@ footer{
                     }
                 }
             }
+        
+            .party_content{
+                width: 100%;
+                .anunciament_card{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 5em;
+                    img{
+                        max-height: 100vh;
+                    }
+                }
+            }
         }
+
 
     }
 }
 
+.post_container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label{
+        width: 40%;
+        h3{
+            font-size: 2em;
+            color :rgb(165, 101, 101)
+        }
+        button{
+            width: 20%;
+        }
+        input{
+            height: 60%;
+            width: 90%;
+            border: none;
+            background-color: none;
+        }
+        .input{
+            width: 100%;
+            display: flex;
+            margin-top: 1em;
+            .input-field{
+                width: 80%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: white;
+                border: solid 1px rgb(165, 101, 101);
+                border-radius: 1em;
+                margin-right: 2em;
+                input{
+                    font-size: 2em ;
+                    height: 60%;
+                    width: 90%;
+                    border: none;
+                }
+            }
+        }
+        .currency_field{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            .currency_input_field{
+                height: 55%;
+                width: 80%;
+                display: flex;
+                justify-content:center ;
+                align-items: center;
+                p{
+                    font-size: 2em;
+                    color: rgb(165, 101, 101);
+                    
+                }
+                .currency_input{
+                    width: 100%;
+                    #currency{
+                        border: none;
+                        font-size: 2em;
+                        background-color: #f7f5f2;
+                        color: rgb(165, 101, 101);
+                    }
+
+                }
+                 @media(max-width : $breakepoint) {
+                width: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-right: 0;
+                margin-bottom: 5vh;
+                margin-top: 5vh;
+             }
+            }
+            @media(max-width : $breakepoint) {
+                flex-direction: column;
+            }
+            @media(max-width : $breakepoint) {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+            }
+        }
+        @media(max-width : $breakepoint) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    #map{
+        width: 20vh;
+        height: 20vh;
+        color:rgb(165, 101, 101);
+    }
+}
+
+.party_container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+
+    .party_header{
+        background-color: whitesmoke;
+        width: 80%;
+        max-width: 1000px;
+        min-height: 40vh;
+
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        justify-content: center;
+
+        img{
+            max-width: 10em;
+            max-height: 10em;
+            border-radius: 50%;
+        }
+        .party_vatar{
+            display: flex;
+            justify-content: center;
+        }
+
+        .Party_data{
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .party_name{
+                display: flex;
+                font-size: 4vh;
+                height: 50%;
+
+                align-items: flex-end;
+                
+            }
+
+            .party_infos{
+                width: 50%;
+                height: 10%;
+                display: flex;
+                justify-content: space-between;
+
+                margin-top: 1em;
+            }
+            .resumo{
+                width: 50%;
+                height: 30%;
+                margin-top: 2%;
+            }
+        }
+    }
+}

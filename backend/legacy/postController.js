@@ -1,4 +1,4 @@
-const post = require("../models/Post")
+const post = require("./Post")
 
 
 module.exports ={

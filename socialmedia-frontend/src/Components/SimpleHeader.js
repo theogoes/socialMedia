@@ -1,17 +1,6 @@
-import React from 'react'
-import {useNavigate} from 'react-router-dom'
+import React from 'react';
 
-
-export default function HeaderNav({clearUserID}) {
-
-    const n = useNavigate()
-
-    function clear(){
-        clearUserID()
-        localStorage.clear()
-        n('/')
-    }
-
+function SimpleHeader() {
     return (
         <header>
             <nav>
@@ -26,10 +15,9 @@ export default function HeaderNav({clearUserID}) {
                     
                 </div>
                 </a>
-                    <p id='sair' onClick={clear}> Sair</p>
             </nav>
         </header>
     )
-
 }
 
+export default SimpleHeader;

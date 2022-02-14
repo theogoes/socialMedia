@@ -34,7 +34,7 @@ function ProfileMainSection() {
                 setPosts(data.postUser)
                 setUserLikes(data.userInfo.likes)
             } catch (error) {
-                alert("deu ruim padrim : " + error)
+               
             }
         }
         getProfile()
