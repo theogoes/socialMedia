@@ -37,12 +37,12 @@ function FeedContainer() {
                     usr ={post.user.userName} 
                     desc = {post.description}
                     likes = {post.likes}
-                    avatar = {post.user.avatar}
+                    avatar = {post.gerente.avatar}
                     id = {post._id}
                     inter = {interactionPost}
                     userId = {post.user._id}
                     />*/
-                    console.log(post.gerente)
+                    console.log()
                 ))
             }
         </>

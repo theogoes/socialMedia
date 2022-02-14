@@ -2,6 +2,7 @@ const { Router } = require("express")
 const { route } = require("express/lib/application")
 const loginController = require("../controllers/loginController")
 const partyController = require("../controllers/partyController")
+const postController = require("../controllers/postController")
 //const postController = require("../controllers/postController")
 const profileController = require("../controllers/profileController")
 const userController = require("../controllers/UserController")
@@ -30,4 +31,6 @@ router.get("/party", partyController.listPartys)
 router.put("/party/:party_id", partyController.joinParty)
 //pensando em ir na festa
 router.put("/party/t/:party_id", partyController.tinkParty)
+//listar posts
+router.get("/post", postController.listPosts)
 module.exports = router

@@ -1,6 +1,10 @@
 const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema({
+    type:{
+        type : Number,
+        require: true
+    },
     picture:{
         type: String,
         require: true

@@ -4,6 +4,7 @@ const post = require("./Post")
 module.exports ={
     async createPost(req,res){
         const {
+            type,
             picture,
             description
         } = req.body
@@ -12,6 +13,7 @@ module.exports ={
 
         try {
             const newPost = await post.create({
+                type,
                 picture,
                 description,
                 user
