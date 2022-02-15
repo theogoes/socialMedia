@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./backend/src/index.js",
-    "start": "node ./backend/src/index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
+    "start": "node ./backend/src/index.js"
   },
   "keywords": [],
   "author": "",
