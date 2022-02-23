@@ -31,6 +31,8 @@ router.get("/party", partyController.listPartys)
 router.put("/party/:party_id", partyController.joinParty)
 //pensando em ir na festa
 router.put("/party/t/:party_id", partyController.tinkParty)
+//pegando festa espexifica
+router.put("/party/:party_id", profileController.getParty)
 //listar posts
 router.get("/post", postController.listPosts)
 module.exports = router

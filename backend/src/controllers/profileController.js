@@ -1,6 +1,7 @@
 const { vary } = require("express/lib/response")
 //const post = require("../models/Post") <== legacy
 const User = require("../models/User")
+const Party = require("../models/Party")
 
 module.exports = {
     async getProfiles(req,res){
@@ -25,5 +26,20 @@ module.exports = {
         const {user_id} = req.headers
         const {post_id} = req.params
         
+    },
+    async getParty(req,res){
+        const {party_id} = req.params
+
+        try {
+            partyInfo = await Party.findById(party_id).populate("festeiros")
+            if(!partyInfo) return res.status(400).send({message : "cupinxa n existe -.-"})
+
+            return res.status(200).send({
+                message : "To i o festere",
+                partyInfo
+            })
+        } catch (error) {
+            return res.status(400).send(error)
+        }
     }
 }
