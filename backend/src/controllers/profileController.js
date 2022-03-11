@@ -1,5 +1,5 @@
 const { vary } = require("express/lib/response")
-//const post = require("../models/Post") <== legacy
+const post = require("../models/Post") 
 const User = require("../models/User")
 const Party = require("../models/Party")
 
